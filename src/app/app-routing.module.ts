@@ -4,10 +4,12 @@ import { Routes } from "@angular/router";
 
 import { ItemsComponent } from "./item/items.component";
 import { ItemDetailComponent } from "./item/item-detail.component";
+import { TodoComponent } from "./todo/todo.component";
+
 
 const routes: Routes = [
     { path: "", redirectTo: "/items", pathMatch: "full" },
-    { path: "items", component: ItemsComponent },
+    { path: "items", component: TodoComponent },
     { path: "item/:id", component: ItemDetailComponent }
 ];
 

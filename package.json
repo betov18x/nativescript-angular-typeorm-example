@@ -21,6 +21,7 @@
         "@angular/platform-browser": "~7.1.0",
         "@angular/platform-browser-dynamic": "~7.1.0",
         "@angular/router": "~7.1.0",
+        "@types/node": "^12.6.8",
         "nativescript-angular": "~7.1.0",
         "nativescript-sqlite": "^2.3.3",
         "nativescript-theme-core": "~1.0.4",

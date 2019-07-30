@@ -1,0 +1,8 @@
+<ActionBar class="action-bar" title="NativeScript-Angular"></ActionBar>
+<StackLayout class="todo-list-container">
+    <TextField [(ngModel)]='newtask' hint="New Task" id="newtask"></TextField>
+    <Button (tap)="addTodo()" text="ADD TASK"></Button>
+    <StackLayout *ngFor="let todo of todos" class="list-group-item">
+        <Label [text]="todo.task"></Label>
+    </StackLayout>
+</StackLayout>
