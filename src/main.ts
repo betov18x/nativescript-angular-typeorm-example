@@ -3,6 +3,13 @@ import { platformNativeScriptDynamic } from "nativescript-angular/platform";
 
 import { AppModule } from "./app/app.module";
 
+//TypeORM
+import {createConnection, getManager} from "typeorm/browser";
+//Model
+import Todo from './app//models/Todo';
+//Driver
+let driver = require('nativescript-sqlite');
+
 // A traditional NativeScript application starts by initializing global objects,
 // setting up global CSS rules, creating, and navigating to the main page.
 // Angular applications need to take care of their own initialization:
@@ -10,4 +17,30 @@ import { AppModule } from "./app/app.module";
 // A NativeScript Angular app needs to make both paradigms work together,
 // so we provide a wrapper platform object, platformNativeScriptDynamic,
 // that sets up a NativeScript application and can bootstrap the Angular framework.
+
+(async () => {
+    try {
+        const connection = await createConnection({
+            database: 'test.db',
+            type: 'nativescript',
+            driver,
+            entities: [
+                Todo
+            ],
+            logging: true
+        })
+
+        console.log("Connection Created")
+
+        // setting true will drop tables and recreate
+        await connection.synchronize(false) 
+
+        console.log("Synchronized")
+
+
+    } catch (err) {
+        console.error(err)
+    }
+})();
+
 platformNativeScriptDynamic().bootstrapModule(AppModule);
