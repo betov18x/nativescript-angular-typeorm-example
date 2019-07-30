@@ -1,8 +1,10 @@
 <ActionBar class="action-bar" title="NativeScript-Angular"></ActionBar>
 <StackLayout class="todo-list-container">
-    <TextField [(ngModel)]='newtask' hint="New Task" id="newtask"></TextField>
-    <Button (tap)="addTodo()" text="ADD TASK"></Button>
-    <StackLayout *ngFor="let todo of todos" class="list-group-item">
-        <Label [text]="todo.task"></Label>
-    </StackLayout>
+    <TextField [(ngModel)]='newtask' hint="New Task"></TextField>
+    <Button (tap)="addTodo()" text="ADD TASK" class="btn"></Button>
+    <ListView [items]="todos" class="list-group">
+        <ng-template let-item="item">
+            <Label [text]="item.task" class="list-group-item"></Label>
+        </ng-template>
+    </ListView>
 </StackLayout>
