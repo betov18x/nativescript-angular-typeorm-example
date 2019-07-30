@@ -32,10 +32,9 @@ export class TodoComponent implements OnInit {
     }
 
     addTodo() {
-        
-        console.log('el valor del textfield es: ' + this.newtask);
         const todo = new Todo(this.newtask, false);
         todo.save().then(() => this.refreshTodos())
             .catch(console.error)
+        this.newtask = '';
     }
 }

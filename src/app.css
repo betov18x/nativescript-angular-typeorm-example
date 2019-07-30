@@ -10,20 +10,24 @@ of writing your own CSS rules. For a full list of class names in the theme
 refer to http://docs.nativescript.org/ui/theme.
 */
 
-@import '~nativescript-theme-core/css/orange.css';
+@import '~nativescript-theme-core/css/core.light.css';
 .todo-list-container {
     margin: 5px;
 }
 
 .btn {
-    background-color: orangered;
+    /* background-color: orangered; */
     border-radius: 80px;
-    color: white;
+    /* color: white; */
+    border-color: #2196F3;
+    border-width: 1;
+    color: #2196F3
 }
 
 .btn:active {
-    background-color: lightslategray;
-    color: white;
+    /* background-color: lightslategray; */
+    /* color: white; */
+    color: #FFFFFF;
+    border-color: #2196F3;
+    background-color: #2196F3;
 }
-
-.label {}
