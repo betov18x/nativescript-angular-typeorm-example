@@ -28,7 +28,7 @@
         "reflect-metadata": "~0.1.12",
         "rxjs": "~6.3.0",
         "tns-core-modules": "~5.1.0",
-        "typeorm": "^0.2.18",
+        "typeorm": "^0.2.25",
         "zone.js": "~0.8.26"
     },
     "devDependencies": {
